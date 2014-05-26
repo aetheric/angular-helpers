@@ -1,0 +1,125 @@
+<project
+		xmlns="http://maven.apache.org/POM/4.0.0"
+		xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		xsi:schemaLocation="
+			http://maven.apache.org/POM/4.0.0
+			http://maven.apache.org/xsd/maven-4.0.0.xsd
+		">
+	<modelVersion>4.0.0</modelVersion>
+
+	<parent>
+		<groupId>nz.co.aetheric.parent</groupId>
+		<artifactId>maven-parent-global</artifactId>
+		<version>1.1.0</version>
+	</parent>
+
+	<groupId>nz.co.aetheric.angular</groupId>
+	<artifactId>angular-helpers</artifactId>
+	<version>1.1.0-SNAPSHOT</version>
+	<packaging>jsar</packaging>
+
+	<name>Angular Helpers</name>
+	<description>
+		A set of helper utility extensions for angularjs.
+	</description>
+
+	<developers>
+
+		<developer>
+			<id>pcummuskey</id>
+			<name>Peter Cummuskey</name>
+			<email>peterc@aetheric.co.nz</email>
+			<url>http://gplus.to/tzrlk</url>
+		</developer>
+
+	</developers>
+
+	<properties>
+		<version.asciidoc>0.1.4</version.asciidoc>
+	</properties>
+
+	<build>
+		<plugins>
+
+			<plugin>
+				<groupId>com.github.jlgrock.javascript-framework</groupId>
+				<artifactId>jsar-maven-plugin</artifactId>
+				<version>1.18.1</version>
+				<extensions>true</extensions>
+			</plugin>
+
+			<plugin>
+				<groupId>com.github.jlgrock.javascript-framework</groupId>
+				<artifactId>jsdependency-maven-plugin</artifactId>
+				<version>1.18.1</version>
+			</plugin>
+
+			<plugin>
+				<groupId>com.github.jlgrock.javascript-framework</groupId>
+				<artifactId>closure-compiler-maven-plugin</artifactId>
+				<version>1.18.1</version>
+			</plugin>
+
+			<plugin>
+				<groupId>com.github.jlgrock.javascript-framework</groupId>
+				<artifactId>closure-testing-maven-plugin</artifactId>
+				<version>1.18.1</version>
+			</plugin>
+
+			<plugin>
+				<groupId>com.github.jlgrock.javascript-framework</groupId>
+				<artifactId>jsdocs-maven-plugin</artifactId>
+				<version>1.18.1</version>
+				<executions>
+					<execution>
+						<goals>
+							<goal>jsar</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+
+			<plugin>
+				<groupId>com.github.jlgrock.javascript-framework</groupId>
+				<artifactId>source-archive-maven-plugin</artifactId>
+				<version>1.18.1</version>
+				<executions>
+					<execution>
+						<goals>
+							<goal>js-gen-source-archive</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-site-plugin</artifactId>
+				<version>3.3</version>
+
+				<dependencies>
+					<dependency>
+						<groupId>org.asciidoctor</groupId>
+						<artifactId>asciidoctor-maven-plugin</artifactId>
+						<version>${version.asciidoc}</version>
+					</dependency>
+				</dependencies>
+
+			</plugin>
+
+		</plugins>
+	</build>
+
+	<issueManagement>
+		<system>github</system>
+		<url>https://github.com/aetheric/angular-helpers/issues</url>
+	</issueManagement>
+
+	<scm>
+		<url>https://github.com/aetheric/angular-helpers</url>
+		<connection>scm:git:https://github.com/aetheric/angular-helpers.git</connection>
+		<developerConnection>scm:git:git@github.com:aetheric/angular-helpers.git</developerConnection>
+		<tag>master</tag>
+	</scm>
+
+</project>
