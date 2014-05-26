@@ -1,0 +1,7 @@
+Angular Helper Utils
+====================
+:author: Peter Cummuskey
+:email: peterc@aetheric.co.nz
+
+A set of helper utility extensions for angularjs.
+
