@@ -1,12 +1,14 @@
 goog.provide('nz.co.aetheric.angular.AngularHelpers');
 
-(function(ng, _) {
+(function(angular, _) {
 
 	function prepareInjection(module, options, callback) {
-		var injection = options['inject'] || [];
+		var name = options['name'];
+		var inject = options['inject'] || [];
+		var extend = options['extend'] || [];
 		var init = options['init'] || function(){};
 
-		injection.push(function() {
+		inject.push(function() {
 			init.call(_.inject(arguments, function(context, injection, index) {
 				var name = injection[index];
 
@@ -19,32 +21,38 @@ goog.provide('nz.co.aetheric.angular.AngularHelpers');
 		});
 
 		var resolvedModule = _.isString(module)
-				? ng.module(module)
+				? angular.module(module)
 				: module;
 
-		callback(resolvedModule, injection);
+		callback(name, resolvedModule, inject);
 	}
 
-	ng.controller = function(module, options) {
-		prepareInjection(module, options, function(resolvedModule, injection) {
-			resolvedModule.controller(injection);
-		});
-	};
+	_.extend(angular, {
 
-	ng.service = function(module, options) {
-		prepareInjection(module, options, function(resolvedModule, injection) {
-			resolvedModule.service(injection);
-		});
-	};
-
-	ng.directive = function(module, options) {
-		prepareInjection(module, options, function(resolvedModule, injection) {
-			resolvedModule.directive({
-				restrict: 'A',
-				scope: options.scope,
-				controller: injection
+		controller: function(module, options) {
+			prepareInjection(module, options, function(name, resolvedModule, injection) {
+				resolvedModule.controller(name, injection);
 			});
-		});
-	};
+		},
+
+		service: function(module, options) {
+			prepareInjection(module, options, function(name, resolvedModule, injection) {
+				resolvedModule.service(name, injection);
+			});
+		},
+
+		directive: function(module, options) {
+			prepareInjection(module, options, function(name, resolvedModule, injection) {
+				resolvedModule.directive(name, function() {
+					return {
+						restrict: 'A',
+						scope: options.scope,
+						controller: injection
+					};
+				});
+			});
+		}
+
+	});
 
 })(window.angular, window._);
