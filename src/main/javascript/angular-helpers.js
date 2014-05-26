@@ -3,8 +3,8 @@ goog.provide('nz.co.aetheric.angular.AngularHelpers');
 (function(ng, _) {
 
 	function prepareInjection(module, options, callback) {
-		var injection = options.inject || [];
-		var init = options.init || function(){};
+		var injection = options['inject'] || [];
+		var init = options['init'] || function(){};
 
 		injection.push(function() {
 			init.call(_.inject(arguments, function(context, injection, index) {
