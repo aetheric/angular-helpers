@@ -1,6 +1,9 @@
 goog.provide('nz.co.aetheric.angular.AngularHelpers');
 
 (function(angular, _) {
+	if (!angular || !_) {
+		throw 'This library requires both angular and underscore to work.';
+	}
 
 	function prepareInjection(module, options, callback) {
 		var name = options['name'];
