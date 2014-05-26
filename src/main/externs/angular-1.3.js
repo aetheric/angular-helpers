@@ -1248,13 +1248,13 @@ angular.$http.HttpPromise.then = function(
  * @param {?function(!angular.$http.Response)} callback
  * @return {!angular.$http.HttpPromise}
  */
-angular.$http.HttpPromise.catch = function(callback) {};
+angular.$http.HttpPromise['catch'] = function(callback) {};
 
 /**
  * @param {?function(!angular.$http.Response)} callback
  * @return {!angular.$http.HttpPromise}
  */
-angular.$http.HttpPromise.finally = function(callback) {};
+angular.$http.HttpPromise['finally'] = function(callback) {};
 
 /**
  * @param {angular.HttpCallback} callback
@@ -1787,13 +1787,13 @@ angular.$q.Promise.then = function(successCallback, opt_errorCallback) {};
  * @param {?function(?)} callback
  * @return {!angular.$q.Promise}
  */
-angular.$q.Promise.catch = function(callback) {};
+angular.$q.Promise['catch'] = function(callback) {};
 
 /**
  * @param {?function(?)} callback
  * @return {!angular.$q.Promise}
  */
-angular.$q.Promise.finally = function(callback) {};
+angular.$q.Promise['finally'] = function(callback) {};
 
 /******************************************************************************
  * $route Service
