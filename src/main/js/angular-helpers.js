@@ -1,31 +1,35 @@
-goog.provide('nz.co.aetheric.angular.AngularHelpers');
+/*global define */
+define([
+	'angular',
+	'underscore'
+], function(angular, _) {
 
-(function(angular, _) {
-	if (!angular || !_) {
-		throw 'This library requires both angular and underscore to work.';
-	}
-
-	var NG_SCOPE = '$scope';
-	var NG_CONTROLLER = '$controller';
-	var OPT_NAME = 'name';
-	var OPT_INJECT = 'inject';
-	var OPT_EXTEND = 'extend';
-	var OPT_INIT = 'init';
+	var NG_SCOPE = '$scope',
+		NG_CONTROLLER = '$controller',
+		OPT_NAME = 'name',
+		OPT_INJECT = 'inject',
+		OPT_EXTEND = 'extend',
+		OPT_INIT = 'init';
 
 	function prepareInjection(module, options, callback) {
-		var opts = {
+		var
+			opts = {
 
-			name: options[OPT_NAME],
+				name: options[OPT_NAME],
 
-			inject: options[OPT_INJECT] || [],
+				inject: options[OPT_INJECT] || [],
 
-			extend: _.isString(options[OPT_EXTEND])
-				? [ options[OPT_EXTEND] ]
-				: ( options[OPT_EXTEND] || [] ),
+				extend: _.isString(options[OPT_EXTEND])
+					? [ options[OPT_EXTEND] ]
+					: ( options[OPT_EXTEND] || [] ),
 
-			init: options[OPT_INIT] || function(){}
+				init: options[OPT_INIT] || function(){}
 
-		};
+			},
+
+			resolvedModule = _.isString(module)
+				? angular.module(module)
+				: module;
 
 		if (opts.extend && !_.contains(opts.inject, NG_CONTROLLER)) {
 			opts.inject.push(NG_CONTROLLER);
@@ -54,10 +58,6 @@ goog.provide('nz.co.aetheric.angular.AngularHelpers');
 
 			opts.init.call(context);
 		});
-
-		var resolvedModule = _.isString(module)
-				? angular.module(module)
-				: module;
 
 		callback(opts.name, resolvedModule, opts.inject);
 	}
@@ -90,4 +90,4 @@ goog.provide('nz.co.aetheric.angular.AngularHelpers');
 
 	});
 
-})(window.angular, window._);
+});
