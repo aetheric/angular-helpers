@@ -6,6 +6,7 @@
 *.iws
 
 # Build
+node_modules/
 target/
 *.log
 

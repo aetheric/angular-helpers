@@ -1,0 +1,34 @@
+{
+	"name": "angular-helpers",
+	"version": "1.1.0",
+	"description": "A set of utility extensions to AngularJS that improve the syntax.",
+	"main": "gulpfile.js",
+	"scripts": {
+		"test": "mocha --recursive src/test"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git@github.com:aetheric/angular-helpers.git"
+	},
+	"keywords": [
+		"angular",
+		"utils"
+	],
+	"author": "Peter Cummuskey",
+	"license": "MIT",
+	"bugs": {
+		"url": "https://github.com/aetheric/angular-helpers/issues"
+	},
+	"devDependencies": {
+		"gulp": "~3.8.7",
+		"gulp-mocha": "~1.0.0",
+
+		"mocha": "~1.21.4",
+		"chai": "~1.9.1",
+		"mockrequire": "~0.0.3",
+
+		"angular": "~1.2.21",
+		"underscore": "~1.6.0"
+
+	}
+}
