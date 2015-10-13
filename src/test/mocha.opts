@@ -1,0 +1,4 @@
+--require expect
+--ui bdd
+--recursive
+--compilers es6:mocha-traceur

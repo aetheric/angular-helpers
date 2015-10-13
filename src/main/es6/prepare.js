@@ -1,6 +1,8 @@
-/* globals require, angular, Array, String */
+/* globals require, Array, String */
 
 import * as utils from './utils.js';
+
+let angular = require('angular');
 
 let NG_SCOPE = '$scope';
 let NG_CONTROLLER = '$controller';
