@@ -6,7 +6,7 @@
 		"Peter Cummuskey <peterc@aetheric.co.nz>"
 	],
 	"description": "A set of angular extensions that make component generation easier.",
-	"main": "dist/angular-helpers.js",
+	"main": "target/classes/angular-helpers.js",
 	"moduleType": [
 		"es6"
 	],

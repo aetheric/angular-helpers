@@ -1,4 +1,4 @@
-/* globals require, module, process */
+/* globals require, module, process, __appdir */
 
 var gulp = require('gulp');
 var mocha = require('gulp-mocha');
@@ -6,7 +6,7 @@ var utils = require('gulp-util');
 var istanbul = require('gulp-istanbul');
 
 module.exports = function() {
-	return gulp.src('../../test/unit/**/*.js')
+	return gulp.src(__appdir + '/src/test/unit/**/*.js')
 
 		.pipe(mocha({
 			ui: 'bdd',
@@ -21,6 +21,7 @@ module.exports = function() {
 
 		// Creating the reports after tests ran
 		.pipe(istanbul.writeReports({
+			dir: __appdir + '/target/reports/coverage',
 			reporters: [
 				'json'
 			]
@@ -29,7 +30,7 @@ module.exports = function() {
 		// Enforce a coverage of at least 90%
 		.pipe(istanbul.enforceThresholds({
 			thresholds: {
-				global: 1
+				global: 0
 			}
 		}))
 

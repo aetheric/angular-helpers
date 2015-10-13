@@ -1,4 +1,4 @@
-/* globals require, module */
+/* globals require, module, __appdir */
 
 var gulp = require('gulp');
 var uglify = require('gulp-uglify');
@@ -7,7 +7,7 @@ var traceur = require('gulp-traceur');
 var concat = require('gulp-concat');
 
 module.exports = function() {
-	return gulp.src('../../main/es6/**/*.js')
+	return gulp.src(__appdir + '/src/main/es6/**/*.js')
 
 		.pipe(sourcemaps.init())
 
@@ -17,11 +17,11 @@ module.exports = function() {
 
 		.pipe(uglify())
 
-		.pipe(sourcemaps.write('.', {
-			sourceRoot: '../../../target/classes',
+		.pipe(sourcemaps.write(__appdir + '/target/classes', {
+			sourceRoot: __appdir + '/src/main/es6',
 			sourceMappingURLPrefix: './'
 		}))
 
-		.pipe(gulp.dest('../../../target/classes'));
+		.pipe(gulp.dest(__appdir + '/target/classes'));
 
 };

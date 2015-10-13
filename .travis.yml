@@ -1,1 +1,13 @@
-lang: node
+language: java
+
+script:
+	- mvn package
+	- mvn deploy
+
+deploy:
+
+	- releases
+		file:
+			- target/angular-helpers-*.jar
+		on:
+			tags: true
