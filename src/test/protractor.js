@@ -1,4 +1,4 @@
-/* globals exports */
+/* globals exports, require */
 
 var phantomjs = require('phantomjs');
 

@@ -2,7 +2,8 @@
 
 var gulp = require('gulp');
 var mocha = require('gulp-mocha');
-var utils = require('gulp-utils');
+var utils = require('gulp-util');
+var istanbul = require('gulp-istanbul');
 
 module.exports = function() {
 	return gulp.src('../../test/unit/**/*.js')

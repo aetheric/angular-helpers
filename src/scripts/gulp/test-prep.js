@@ -3,7 +3,7 @@
 var gulp = require('gulp');
 var istanbul = require('gulp-istanbul');
 
-gulp.task('test-prep', function () {
+module.exports = function() {
 	return gulp.src(['../../main/es6/**/*.js'])
 
 		// Covering files
@@ -14,4 +14,4 @@ gulp.task('test-prep', function () {
 		// Force `require` to return covered files
 		.pipe(istanbul.hookRequire());
 
-});
+};

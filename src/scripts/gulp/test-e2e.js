@@ -3,6 +3,7 @@
 var gulp = require('gulp');
 var protractor = require('gulp-angular-protractor');
 var utils = require('gulp-util');
+var istanbul = require('gulp-istanbul');
 
 module.exports = function() {
 	return gulp.src('../../test/e2e/**/*.js')
