@@ -1,5 +1,7 @@
-var expect = require('chai').expect;
-var mockrequire = require('mockrequire');
+/* globals describe, it, require */
+
+let expect = require('chai').expect;
+let mockrequire = require('mockrequire');
 
 describe('The library should enhance angular.', function() {
 	var angular_helpers;
