@@ -1,0 +1,27 @@
+{
+  "name": "angular-helpers",
+  "version": "1.1.0-alpha.1",
+  "homepage": "https://github.com/aetheric/angular-helpers",
+  "authors": [
+    "Peter Cummuskey <peterc@aetheric.co.nz>"
+  ],
+  "description": "A set of angular extensions that make component generation easier.",
+  "main": "dist/angular-helpers.js",
+  "moduleType": [
+    "es6"
+  ],
+  "keywords": [
+    "angular",
+    "helpers",
+    "utils",
+    "extension"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
