@@ -1,0 +1,5 @@
+/* globals exports */
+
+exports.config = {
+	//
+};

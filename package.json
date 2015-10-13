@@ -2,9 +2,11 @@
 	"name": "angular-helpers",
 	"version": "1.1.0",
 	"description": "A set of utility extensions to AngularJS that improve the syntax.",
-	"main": "gulpfile.js",
+	"main": "target/classes/angular-helpers.js",
 	"scripts": {
-		"test": "mocha --recursive src/test"
+		"build": "gulp build",
+		"test": "gulp test",
+		"docs": "gulp docs"
 	},
 	"repository": {
 		"type": "git",
@@ -25,10 +27,7 @@
 
 		"mocha": "~1.21.4",
 		"chai": "~1.9.1",
-		"mockrequire": "~0.0.3",
-
-		"angular": "~1.2.21",
-		"underscore": "~1.6.0"
+		"mockrequire": "~0.0.3"
 
 	}
 }
