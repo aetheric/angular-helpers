@@ -3,5 +3,7 @@ Angular Helper Utils
 :author: Peter Cummuskey
 :email: peterc@aetheric.co.nz
 
+image:https://travis-ci.org/aetheric/angular-helpers.svg["Build Status", link="https://travis-ci.org/aetheric/angular-helpers"]
+
 A set of helper utility extensions for angularjs.
 
